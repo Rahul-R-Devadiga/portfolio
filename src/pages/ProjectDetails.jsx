@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import { ListofProjectDetails } from "../utils/mockData";
+import { useParams } from "react-router-dom";
 
 const ProjectDetails = () => {
-  return (
-    <div>ProjectDetails</div>
-  )
-}
+  const { workId } = useParams();
+  const projectInfo = ListofProjectDetails[workId];
 
-export default ProjectDetails
+  if (!projectInfo) {
+    return <div className="p-10">Project not found.</div>;
+  }
+
+  return <div>ProjectDetails {projectInfo.name}</div>;
+};
+
+export default ProjectDetails;

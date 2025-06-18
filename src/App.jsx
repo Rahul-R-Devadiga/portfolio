@@ -21,10 +21,10 @@ const appRouter = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <div className="md:my-6 md:mx-40 my-2 mx-10">
       <RouterProvider router={appRouter} />
       <Footer/>
-    </>
+    </div>
   );
 }
 

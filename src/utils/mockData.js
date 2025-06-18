@@ -1,26 +1,29 @@
 export const landingPageData = {
-  title: "Lorem ipsum dolor sit amet.",
+  title: "Web Apps. React UIs. APIs. Performance. MERN Stack. & More.",
   shortAboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed veniam accusamus quisquam delectus. Amet quaerat eligendi a facere, sunt incidunt laudantium, nesciunt velit assumenda alias accusantium consequatur impedit beatae eius accusamus debitis voluptatum labore! Tempore suscipit rerum facere reprehenderit quo provident consectetur excepturi numquam architecto debitis. At voluptatem fugit voluptatibus ratione obcaecati neque aut iusto alias ut, sunt nihil hic.",
+    "I’m Rahul, a developer who helps businesses turn ideas into responsive, high-performance web apps. From UI to backend, I deliver clean code that works.",
 };
 
 export const projectCards = [
   {
+    id: "vibe_talk",
     name: "Vibe Talk",
     tagline: "A Chating Web App",
-    coverImage: "url",
+    coverImage: "/src/assets/Vibe_Talk_mockup.png",
   },
 
   {
+    id: "NetflixGPT",
     name: "NetflixGPT",
     tagline: "Movie Recommendation",
-    coverImage: "url",
+    coverImage: "/src/assets/Netflix_Recommendation_mockup.png",
   },
 
   {
+    id: "D_Shiksha",
     name: "D-Shiksha",
     tagline: "MutliSchool Management System",
-    coverImage: "url",
+    coverImage: "/src/assets/DShiksha_mockup.png",
   },
 ];
 
@@ -196,5 +199,9 @@ export const ListofProjectDetails = {
 
     output:
       "NetflixGPT helped reinforce my understanding of React component architecture, state flow using Redux, and working with third-party AI APIs. It also refined my UI implementation and deployment process on Vercel. The project is now available publicly on GitHub for review.",
+  },
+
+  D_Shiksha: {
+    name: "D-Shiksha",
   },
 };
