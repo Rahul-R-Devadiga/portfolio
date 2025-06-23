@@ -30,8 +30,8 @@ export const projectCards = [
 ];
 
 export const links = {
-  linkeIn: "https://www.linkedin.com/in/rahul-r-devadiga/",
-  github: "https://github.com/Rahul-R-Devadiga",
+  LinkedIn: "https://www.linkedin.com/in/rahul-r-devadiga/",
+  GitHub: "https://github.com/Rahul-R-Devadiga",
 };
 
 export const ListOfQualifications = [
@@ -305,13 +305,13 @@ export const aboutPageData = {
     {
       course: "Master of Computer Application (MCA)",
       college: "Online Manipal University, Jaipur",
-      year: "2023 - present",
+      years: "2023 - present",
     },
 
     {
       course: "Bachelor of Computer Application (BCA)",
       college: "SDM College of Business Management, Mangalore",
-      year: "2019 - 2022",
+      years: "2019 - 2022",
     },
   ],
 

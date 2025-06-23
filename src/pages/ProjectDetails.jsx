@@ -14,7 +14,7 @@ const ProjectDetails = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="mt-5">
         {/* Name & Subtitle */}
         <div className="text-7xl font-semibold leading-5">
           <h1>{projectInfo.name}</h1>

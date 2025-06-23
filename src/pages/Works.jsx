@@ -8,7 +8,7 @@ const Works = () => {
     <div className="relative">
       <Header />
       
-      <div className="">
+      <div className="mt-5">
         <div className="lg:text-7xl font-semibold leading-[120%] text-balance text-3xl">
           {landingPageData.title}
         </div>
