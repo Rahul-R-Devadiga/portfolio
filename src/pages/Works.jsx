@@ -2,36 +2,106 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import ProjectContainer from "../components/ProjectContainer";
 import { landingPageData } from "../utils/mockData";
+import gsap from "gsap";
+import { useLayoutEffect, useRef, useState } from "react";
 
 const Works = () => {
+  const headerRef = useRef(null);
+  const titleRef = useRef(null);
+  const projectGridRef = useRef(null);
+  const aboutRef = useRef(null);
+  const linkRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useLayoutEffect(() => {
+    if (!hasAnimated) {
+      const tl = gsap.timeline();
+
+      tl.to(headerRef.current, {
+        y: 0,
+        autoAlpha: 1,
+        duration: 1.2,
+        ease: "power2.out",
+      }).to(
+        [
+          titleRef.current,
+          projectGridRef.current,
+          aboutRef.current,
+          linkRef.current,
+          contactRef.current,
+        ],
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 1.2,
+          ease: "power2.out",
+          stagger: 0.15, // slight delay between each
+        },
+        "-=1.0" // overlap start with previous
+      );
+      setHasAnimated(true);
+    }
+  }, [hasAnimated]);
+
   return (
     <div className="relative">
-      <Header />
-      
-      <div className="mt-5">
-        <div className="lg:text-7xl font-semibold leading-[120%] text-balance text-3xl">
-          {landingPageData.title}
+      <Header
+        ref={headerRef}
+        style={{ opacity: 0, transform: "translateY(40px)" }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-0 pb-20">
+        {/* title */}
+        <div
+          className="section-title text-primary"
+          ref={titleRef}
+          style={{ opacity: 0, transform: "translateY(40px)" }}
+        >
+          {" "}
+          {landingPageData.title}{" "}
         </div>
 
-        <div>
+        {/* Project Grid */}
+        <div
+          className="mt-10"
+          ref={projectGridRef}
+          style={{ opacity: 0, transform: "translateY(40px)" }}
+        >
           <ProjectContainer />
         </div>
 
-        <div className="text-[1.375rem] font-light text-[#333333]">
+        {/* Short About Me */}
+        <div
+          className="section-paragraph text-secondary pt-10"
+          ref={aboutRef}
+          style={{ opacity: 0, transform: "translateY(40px)" }}
+        >
           {landingPageData.shortAboutMe}
         </div>
 
-        <div className="text-[1.375rem] font-medium pt-8 hover:underline">
+        {/* More about me link */}
+        <div
+          ref={linkRef}
+          className=" text-xl sm:text-[1.375rem] font-medium pt-8 hover:underline"
+          style={{ opacity: 0, transform: "translateY(40px)" }}
+        >
           <Link to={"/about"}>More about me</Link>
         </div>
 
-        <div className="my-8">
-          <p className="text-[#333333] font-light text-[1.375rem]">
+        {/* Contact Section */}
+        <div
+          className="my-8"
+          ref={contactRef}
+          style={{ opacity: 0, transform: "translateY(40px)" }}
+        >
+          <p className="text-secondary section-paragraph">
             Get in touch{" "}
-            <span className="text-[#666666]"> (Click to mail) </span>{" "}
+            <span className="text-tertiary"> (Click to mail) </span>{" "}
           </p>
 
-          <div className="text-4xl font-semibold cursor-pointer">
+          <div className="text-3xl sm:text-4xl font-semibold cursor-pointer text-primary hover:underline">
             {" "}
             <a href="mailto:devadigarahul06@gmail.com">
               {" "}
