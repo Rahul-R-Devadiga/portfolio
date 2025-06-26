@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../components/Header";
 import { aboutPageData, links } from "../utils/mockData";
-import { useLayoutEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
+import useAnimateSequence from "../hooks/useAnimateSequence";
 
 const About = () => {
   const headerRef = useRef(null);
@@ -13,39 +13,18 @@ const About = () => {
   const disciplinesRef = useRef(null);
   const contactRef = useRef(null);
 
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useLayoutEffect(() => {
-    if (!hasAnimated) {
-      const tl = gsap.timeline();
-
-      tl.to(headerRef.current, {
-        y: 0,
-        autoAlpha: 1,
-        duration: 1.2,
-        ease: "power2.out",
-      }).to(
-        [
-          titleRef.current,
-          paraRef.current,
-          experienceRef.current,
-          educationRef.current,
-          disciplinesRef.current,
-          contactRef.current,
-        ],
-        {
-          y: 0,
-          autoAlpha: 1,
-          duration: 1.2,
-          ease: "power2.out",
-          stagger: 0.15,
-        },
-        "-=1"
-      );
-
-      setHasAnimated(true);
-    }
-  }, [hasAnimated]);
+  useAnimateSequence(
+    [
+      headerRef,
+      titleRef,
+      paraRef,
+      experienceRef,
+      educationRef,
+      disciplinesRef,
+      contactRef,
+    ],
+    []
+  );
 
   return (
     <div>
@@ -56,7 +35,6 @@ const About = () => {
       />
       <div className="grid lg:grid-cols-12 sm:grid-cols-1 pb-[16vh]">
         <div className="col-start-3 col-end-12">
-          
           {/* title */}
           <h2
             className="text-primary section-title"
@@ -171,7 +149,6 @@ const About = () => {
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </div>

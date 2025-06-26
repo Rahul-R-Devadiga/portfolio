@@ -2,8 +2,8 @@ import React from "react";
 import { ListofProjectDetails } from "../utils/mockData";
 import { Link, useParams } from "react-router-dom";
 import Header from "../components/Header";
-import { useLayoutEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
+import useAnimateSequence from "../hooks/useAnimateSequence";
 
 const ProjectDetails = () => {
   const { workId } = useParams();
@@ -21,43 +21,22 @@ const ProjectDetails = () => {
   const outputRef = useRef(null);
   const backLinkRef = useRef(null);
 
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useLayoutEffect(() => {
-    if (!hasAnimated) {
-      const tl = gsap.timeline();
-
-      tl.to(headerRef.current, {
-        y: 0,
-        autoAlpha: 1,
-        duration: 1.2,
-        ease: "power2.out",
-      }).to(
-        [
-          projectTitleRef.current,
-          subtitleRef.current,
-          paraRef.current,
-          linksRef.current,
-          rolesRef.current,
-          challengeRef.current,
-          stackRef.current,
-          screenshotRef.current,
-          outputRef.current,
-          backLinkRef.current,
-        ],
-        {
-          y: 0,
-          autoAlpha: 1,
-          duration: 1.2,
-          ease: "power2.out",
-          stagger: 0.15,
-        },
-        "-=1"
-      );
-
-      setHasAnimated(true);
-    }
-  }, [hasAnimated]);
+  useAnimateSequence(
+    [
+      headerRef,
+      projectTitleRef,
+      subtitleRef,
+      paraRef,
+      linksRef,
+      rolesRef,
+      challengeRef,
+      stackRef,
+      screenshotRef,
+      outputRef,
+      backLinkRef,
+    ],
+    []
+  );
 
   if (!projectInfo) {
     return <div className="p-10">Project not found.</div>;
