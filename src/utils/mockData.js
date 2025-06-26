@@ -1,3 +1,6 @@
+import NetflixImg from "../assets/Netflix_Recommendation_mockup.png";
+import VibeImg from "../assets/Vibe_Talk_mockup.png";
+import DshikshaImg from "../assets/DShiksha_mockup.png";
 import { loadScreenshots } from "./loadScreenshots";
 
 export const landingPageData = {
@@ -11,21 +14,21 @@ export const projectCards = [
     id: "vibe_talk",
     name: "Vibe Talk",
     tagline: "A Chating Web App",
-    coverImage: "/src/assets/Vibe_Talk_mockup.png",
+    coverImage: VibeImg,
   },
 
   {
     id: "NetflixGPT",
     name: "NetflixGPT",
     tagline: "Movie Recommendation",
-    coverImage: "/src/assets/Netflix_Recommendation_mockup.png",
+    coverImage: NetflixImg,
   },
 
   {
     id: "D_Shiksha",
     name: "D-Shiksha",
     tagline: "MutliSchool Management System",
-    coverImage: "/src/assets/DShiksha_mockup.png",
+    coverImage: DshikshaImg,
   },
 ];
 
