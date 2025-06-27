@@ -23,6 +23,9 @@ Deployed on **[Vercel →](https://rahuldevadiga.vercel.app)**
 
 ## 🧰 Tech Stack
 
+**Design System & wireframes**
+- Figma
+
 **Frontend**
 
 - React.js

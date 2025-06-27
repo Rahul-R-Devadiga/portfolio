@@ -4,6 +4,10 @@
   font-family: "Geist", sans-serif;
 }
 
+.notranslate {
+  translate: no;
+  user-select: all; /* still allows copying */
+}
 /* Text colors */
 @layer components {
   .text-primary {

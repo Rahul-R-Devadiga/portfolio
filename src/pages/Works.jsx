@@ -12,34 +12,6 @@ const Works = () => {
   const aboutRef = useRef(null);
   const linkRef = useRef(null);
   const contactRef = useRef(null);
-  //   if (!hasAnimated) {
-  //     const tl = gsap.timeline();
-
-  //     tl.to(headerRef.current, {
-  //       y: 0,
-  //       autoAlpha: 1,
-  //       duration: 1.2,
-  //       ease: "power2.out",
-  //     }).to(
-  //       [
-  //         titleRef.current,
-  //         projectGridRef.current,
-  //         aboutRef.current,
-  //         linkRef.current,
-  //         contactRef.current,
-  //       ],
-  //       {
-  //         y: 0,
-  //         autoAlpha: 1,
-  //         duration: 1.2,
-  //         ease: "power2.out",
-  //         stagger: 0.15, // slight delay between each
-  //       },
-  //       "-=1.0" // overlap start with previous
-  //     );
-  //     setHasAnimated(true);
-  //   }
-  // }, [hasAnimated]);
 
   useAnimateSequence(
     [headerRef, titleRef, projectGridRef, aboutRef, linkRef, contactRef],
@@ -102,7 +74,7 @@ const Works = () => {
             <span className="text-tertiary"> (Click to mail) </span>{" "}
           </p>
 
-          <div className="text-3xl sm:text-4xl font-semibold cursor-pointer text-primary hover:underline">
+          <div className="notranslate text-lg sm:text-3xl font-semibold cursor-pointer text-primary hover:underline">
             {" "}
             <a href="mailto:devadigarahul06@gmail.com">
               {" "}
